@@ -16,7 +16,7 @@ public class Bot extends TelegramLongPollingBot {
         SendMessage message = new SendMessage();
         String joke;
 
-        if (command.equals("help")) {
+        if (command.equals("/help")) {
             System.out.println(helpMessage);
             message.setText(helpMessage);
         } else if (command.equals("/myname@ggfn_bot")) {
