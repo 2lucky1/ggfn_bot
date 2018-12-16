@@ -40,7 +40,7 @@ public class Bot extends TelegramLongPollingBot {
                             "\n";
                     break;
                 case 2:
-                    joke = "Если вы хотите со мной разговаривать, товарищ солдат, то стойте и молчите!\n" +
+                    joke = "Если вы хотите со мной разговаривать, товарищ солдат, то стойте и молчите!!!\n" +
                             "\n";
                     break;
                 case 3:
