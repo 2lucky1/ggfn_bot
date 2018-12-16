@@ -6,14 +6,20 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 public class Bot extends TelegramLongPollingBot {
 
     int count = 0;
+    String helpMessage = "/myname@ggfn_bot - displays first name of the developer\n" +
+            "/mylastname@ggfn_bot - displays last name of the developer\n" +
+            "/myfullname@ggfn_bot - displays full name of the developer\n" +
+            "/telljoke@ggfn_bot - tells a joke";
 
     public void onUpdateReceived(Update update) {
         String command = update.getMessage().getText();
         SendMessage message = new SendMessage();
         String joke;
 
-
-        if (command.equals("/myname@ggfn_bot")) {
+        if (command.equals("help")) {
+            System.out.println(helpMessage);
+            message.setText(helpMessage);
+        } else if (command.equals("/myname@ggfn_bot")) {
             System.out.println(update.getMessage().getFrom().getFirstName());
             message.setText(update.getMessage().getFrom().getFirstName());
         } else if (command.equals("/mylastname@ggfn_bot")) {
