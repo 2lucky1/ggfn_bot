@@ -5,8 +5,8 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 public class Bot extends TelegramLongPollingBot {
 
-    int count = 0;
-    String helpMessage = "/myname@ggfn_bot - displays first name of the developer\n" +
+    private int count = 0;
+    private String helpMessage = "/myname@ggfn_bot - displays first name of the developer\n" +
             "/mylastname@ggfn_bot - displays last name of the developer\n" +
             "/myfullname@ggfn_bot - displays full name of the developer\n" +
             "/telljoke@ggfn_bot - tells a joke";
@@ -59,13 +59,16 @@ public class Bot extends TelegramLongPollingBot {
                     joke = "В мире так много разных денег, а люди не знают что мне подарить...\n" +
                             "\n";
                     break;
+                case 6:
+                    joke = "Как музыку не сортируй, а папку \"разное\" создать придется.";
+                    break;
                 default:
                     joke = "Я забыл все шутки";
             }
 
             count++;
-            if(count>5){
-                count=0;
+            if (count > 6) {
+                count = 0;
             }
 
             System.out.println(joke);
